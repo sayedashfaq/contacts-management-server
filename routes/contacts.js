@@ -10,7 +10,7 @@ import {
 const router = express.Router();
 
 router.get("/api/contacts", getAllContacts);
-router.get("/api/:id", getAContact);
+router.get("/api/contacts/:id", getAContact);
 router.post("/api/contacts", createAContact);
 router.put("/api/contacts/:id", updateAContact);
 router.delete("/api/contacts", deleteAContact);

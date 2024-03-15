@@ -3,10 +3,11 @@ import cors from "cors";
 import mongoose from "mongoose";
 import { configDotenv } from "dotenv";
 import contactRoutes from "./routes/contacts.js";
+
 configDotenv();
 
 const app = express();
-
+app.use(express.json());
 app.use(cors());
 app.listen(process.env.PORT, () => {
   console.log(`Running on ${process.env.PORT}`),
