@@ -3,7 +3,8 @@ import cors from "cors";
 import mongoose from "mongoose";
 import { configDotenv } from "dotenv";
 import contactRoutes from "./routes/contacts.js";
-
+import swaggerUi from 'swagger-ui-express';
+import swaggerDocument from './swagger-output.json' assert { type: 'json' };
 configDotenv();
 
 const app = express();
@@ -18,5 +19,5 @@ app.listen(process.env.PORT, () => {
         console.log(`> Error while connecting to mongoDB : ${err.message}`)
       );
 });
-
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 app.use("/", contactRoutes);

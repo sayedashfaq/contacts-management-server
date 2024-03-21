@@ -5,7 +5,8 @@
   "main": "app.js",
   "type": "module",
   "scripts": {
-    "dev": "nodemon app"
+    "dev": "nodemon app",
+    "swagger": "node ./swagger.js"
   },
   "keywords": [],
   "author": "",
@@ -15,6 +16,8 @@
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "mongoose": "^8.2.1",
-    "nodemon": "^3.1.0"
+    "nodemon": "^3.1.0",
+    "swagger-autogen": "^2.23.7",
+    "swagger-ui-express": "^5.0.0"
   }
 }
