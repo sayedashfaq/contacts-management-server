@@ -48,6 +48,7 @@ export const createAContact = async (req, res) => {
 export const updateAContact = async (req, res) => {
   try {
     const id = req.params.id;
+    const { name, email, phone, address } = req.body;
 
     const contact = await ContactModel.findByIdAndUpdate(id, req.body, {
       new: true,
