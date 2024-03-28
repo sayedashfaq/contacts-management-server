@@ -5,13 +5,16 @@
     "description": "Social Media Api",
     "version": "1.0.0"
   },
-  "host": "localhost:5000",
+  "host": "contacts-management-server.onrender.com",
   "basePath": "/",
-  "schemes": ["http", "https"],
+  "schemes": [
+    "http",
+    "https"
+  ],
   "paths": {
     "/api/contacts": {
       "get": {
-        "description": "get all contacts",
+        "description": "",
         "responses": {
           "200": {
             "description": "OK"
@@ -22,7 +25,7 @@
         }
       },
       "post": {
-        "description": "create contact",
+        "description": "",
         "parameters": [
           {
             "name": "body",
@@ -57,22 +60,11 @@
             "description": "Internal Server Error"
           }
         }
-      },
-      "delete": {
-        "description": "delete contact",
-        "responses": {
-          "200": {
-            "description": "OK"
-          },
-          "500": {
-            "description": "Internal Server Error"
-          }
-        }
       }
     },
     "/api/contacts/{id}": {
       "get": {
-        "description": "get a contact",
+        "description": "",
         "parameters": [
           {
             "name": "id",
@@ -91,7 +83,47 @@
         }
       },
       "put": {
-        "description": "update a contact",
+        "description": "",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "example": "any"
+                },
+                "email": {
+                  "example": "any"
+                },
+                "phone": {
+                  "example": "any"
+                },
+                "address": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "delete": {
+        "description": "",
         "parameters": [
           {
             "name": "id",
